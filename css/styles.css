@@ -22,7 +22,7 @@ ul {
     list-style: none;
 }
 
-/**************header***************/
+/**************nav***************/
 
 nav {
     background: #415e89;
@@ -35,7 +35,8 @@ nav ul {
     align-items: center;
 }
 
-nav li a {
+nav li a,
+nav li span {
     display: inline-flex;
     margin: 15px 0;
     text-decoration: none;
@@ -48,7 +49,7 @@ nav li a img {
     margin-right: 6px;
 }
 
-.list {
+.wrapper-dropdown {
     margin: 0 -15px 0 100px;
 }
 
@@ -57,6 +58,13 @@ nav li:last-child a {
     text-decoration: underline;
     font-size: 14px;
     color: #cbcbcb;
+}
+
+/**********dropdown list************/
+
+.dropdown {
+    position: absolute;
+    opacity: 0;
 }
 
 /****************slider******************/
@@ -81,7 +89,8 @@ nav li:last-child a {
     margin: 0 auto;
     width: 470px;
     height: auto;
-    max-height: 500px;
+    max-height: 490px;
+    overflow: hidden;
     padding: 25px 25px 50px 50px;
     background: rgba(65, 94, 137, .7);
 }
@@ -121,6 +130,12 @@ nav li:last-child a {
     font-size: 0;
     color: transparent;
     cursor: pointer;
+    transition: .4s;
+}
+
+.slick-dots li button:hover {
+    border: 2px solid #48d5ff;
+    background: #555;
 }
 
 .slick-dots li.slick-active button {
@@ -164,19 +179,25 @@ h2 {
     width: 170px;
 }
 
+section {
+    padding: 60px 0;
+}
+
 .wrap-inner a span {
     display: block;
     margin-top: 30px;
-}
-
-section {
-    padding: 60px 0;
 }
 
 .wrap-inner a {
     text-decoration: none;
     font-size: 18px;
     color: #0097dc;
+    transition: .4s;
+}
+
+.wrap-inner a:hover {
+    filter: contrast(250%);
+    color: #48d5ff;
 }
 
 section:nth-of-type(2) {
@@ -219,53 +240,57 @@ section:nth-of-type(4) h2 {
     color: #fff;
 }
 
-section:nth-of-type(4) .wrapper-inner {
+section:nth-of-type(4) ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-flow: wrap;
 }
 
-.number {
-    width: 74px;
-    height: 74px;
-    border-radius: 50%;
-    background: #fff;
-    font-size: 60px;
-    font-weight: bold;
-    color: #555555;
-    text-align: center;
-    line-height: 74px;
-    margin-right: 35px;
-    padding: 0 20px 0 20px;
-}
-
-section:nth-of-type(4) .wrap-inner {
+section:nth-of-type(4) li {
     display: flex;
     width: 500px;
 }
 
-section:nth-of-type(4) .wrap-inner:nth-of-type(1),
-section:nth-of-type(4) .wrap-inner:nth-of-type(2) {
-    margin: 0 0 35px 0;
+/**********counter***********/
+
+section:nth-of-type(4) ul {
+    counter-reset: list;
 }
 
-section:nth-of-type(4) .wrap-inner span {
+section:nth-of-type(4) li::before {
+    counter-increment: list;
+    content: counter(list);
+    display: inline-block;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    line-height: 74px;
+    margin-right: 35px;
+    font-size: 60px;
+    font-weight: bold;
+    background: #fff;
+    color: #555;
+    padding: 0 20px;
+}
+
+section:nth-of-type(4) li:nth-of-type(1),
+section:nth-of-type(4) li:nth-of-type(2) {
+    margin: 0 0 35px;
+}
+
+section:nth-of-type(4) li {
     font-size: 22px;
     font-weight: bold;
     color: #fff;
 }
 
-.wrap-header-about {
-    height: 530px;
-}
-
-.header-about {
-    position: absolute;
-    bottom: 170px;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
+.about {
+    position: relative;
+    height: auto;
+    padding: 60px 0 180px;
     font-size: 18px;
     color: #808080;
 }
@@ -276,13 +301,35 @@ h1 {
     font-size: 36px;
 }
 
-.header-about li:before {
+.about li:before {
     content: "-";
     margin-right: 6px;
 }
 
-.header-about li {
+.about li {
     margin: 10px 0;
+}
+
+.about li:last-child {
+    margin-bottom: 60px;
+}
+
+.about button {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 530px;
+    height: 118px;
+    border-radius: 15px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 48px;
+    background: #0096dc;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 7px 7px 12px 2px rgba(0, 0, 0, .1),
+                5px 5px 9px 0 rgba(0, 0, 0, .15);
 }
 
 /***************footer**************/
@@ -301,9 +348,19 @@ footer address {
     line-height: 1.3;
 }
 
+address a {
+    text-decoration: none;
+    color: #3f3e3e;
+}
+
+address a:last-child {
+    text-decoration: underline;
+}
+
 .up {
-    position: absolute;
+    position: fixed;
     bottom: 15px;
-    right: 365px;
+    right: 30px;
     opacity: .7;
+    cursor: pointer;
 }
