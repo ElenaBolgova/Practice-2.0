@@ -22,7 +22,7 @@ ul {
     list-style: none;
 }
 
-/**************nav***************/
+/************** menu ***************/
 
 nav {
     background: #415e89;
@@ -64,14 +64,20 @@ nav li a img {
     margin: 0 -15px 0 100px;
 }
 
-nav li:last-child a {
+a.language {
     text-transform: none;
     text-decoration: underline;
     font-size: 14px;
     color: #cbcbcb;
+    transition: .4s;
 }
 
-/**********dropdown list************/
+a.language:hover {
+    filter: brightness(150%);
+    color: #cbcbcb;
+}
+
+/********** dropdown list ************/
 
 .js-dropdown {
     cursor: pointer;
@@ -129,7 +135,7 @@ nav li:last-child a {
     bottom: 124px;
 }
 
-/****************slider******************/
+/**************** slider ******************/
 
 .slide {
     position: relative;
@@ -228,7 +234,7 @@ button:focus {
     outline: none;
 }
 
-/********sections**********/
+/***** for all sections *****/
 
 h2 {
     margin-bottom: 45px;
@@ -276,6 +282,8 @@ section ul li a:hover {
     color: #48d5ff;
 }
 
+/********** section "О КОМПАНИИ В ЦИФРАХ" **********/
+
 section:nth-of-type(2) {
     background: #e9e9e9;
 }
@@ -300,6 +308,12 @@ section:nth-of-type(2) span {
     color: #808080;
 }
 
+section:nth-of-type(2) ul li:hover {
+    transform: none;
+}
+
+/****** section "ТРАНСПОРТ ДЛЯ ПЕРЕВОЗКИ ВАШИХ ГРУЗОВ" ******/
+
 section:nth-of-type(3) ul li {
     width: 350px;
 }
@@ -307,6 +321,8 @@ section:nth-of-type(3) ul li {
 section:nth-of-type(3) ul li a {
     font-size: 24px;
 }
+
+/****** section "НАШИ ПРЕИМУЩЕСТВА" ******/
 
 section:nth-of-type(4) {
     background: #0096dc;
@@ -329,7 +345,7 @@ section:nth-of-type(4) li {
     text-align: left;
 }
 
-/**********counter***********/
+/*** counter ***/
 
 section:nth-of-type(4) ul {
     counter-reset: list;
@@ -363,6 +379,8 @@ section:nth-of-type(4) li {
     font-weight: bold;
     color: #fff;
 }
+
+/*******section "Транспортная компания «ФТС».." **********/
 
 .about {
     position: relative;
@@ -425,7 +443,7 @@ h1 {
     transform: translateY(2px);
 }
 
-/***************footer**************/
+/*************** footer **************/
 
 footer {
     background: #a7a7a7;
@@ -454,6 +472,8 @@ address a:hover {
 address a:last-child {
     text-decoration: underline;
 }
+
+/********* Кнопка вверх **********/
 
 .up {
     position: fixed;
