@@ -43,6 +43,17 @@ nav li span {
     font-size: 18px;
     text-transform: uppercase;
     color: #fff;
+    transition: .4s;
+}
+
+nav li a:hover,
+nav li span:hover {
+    color: #48d5ff;
+}
+
+nav li a:active,
+nav li span:active {
+    transform: translateY(2px);
 }
 
 nav li a img {
@@ -62,9 +73,60 @@ nav li:last-child a {
 
 /**********dropdown list************/
 
-.dropdown {
+.js-dropdown {
+    cursor: pointer;
+}
+
+.wrapper-dropdown {
+    position: relative;
+}
+
+.wrapper-dropdown ul {
+    display: block;
     position: absolute;
+    top: 58px;
+    left: -10px;
     opacity: 0;
+    z-index: 1;
+    width: 130px;
+    height: auto;
+    padding: 5px 5px 10px 10px;
+    background: #fff;
+    border: 1px solid #415e89;
+}
+
+.wrapper-dropdown ul li a {
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 9px;
+    color: #000;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.wrapper-dropdown ul li a:hover {
+    text-shadow: 1px 0 0 #415e89;
+}
+
+.wrapper-dropdown ul li a:active {
+    color: #0096dc;
+    text-shadow: 1px 0 0 #0096dc;
+    transform: none;
+}
+
+.wrapper-dropdown ul::before,
+.wrapper-dropdown ul::after {
+    content: '';
+    position: absolute;
+    left: 120px;
+    bottom: 125px;
+    border: 8px solid transparent;
+    border-bottom: 8px solid #415e89;
+}
+.wrapper-dropdown ul::after {
+    border-bottom: 8px solid white;
+    bottom: 124px;
 }
 
 /****************slider******************/
@@ -105,6 +167,15 @@ nav li:last-child a {
     margin-top: 25px;
     font-size: 36px;
     color: #fff;
+    transition: .4s;
+}
+
+.details a:hover {
+    text-decoration: none;
+}
+
+.details a:active {
+    transform: translateY(2px);
 }
 
 .slick-dots {
@@ -167,7 +238,7 @@ h2 {
     color: #808080;
 }
 
-.wrap {
+section ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -175,7 +246,7 @@ h2 {
     text-align: center;
 }
 
-.wrap-inner {
+section ul li {
     width: 170px;
 }
 
@@ -183,19 +254,19 @@ section {
     padding: 60px 0;
 }
 
-.wrap-inner a span {
+section ul li a span {
     display: block;
     margin-top: 30px;
 }
 
-.wrap-inner a {
+section ul li a {
     text-decoration: none;
     font-size: 18px;
     color: #0097dc;
     transition: .4s;
 }
 
-.wrap-inner a:hover {
+section ul li a:hover {
     filter: contrast(250%);
     color: #48d5ff;
 }
@@ -204,11 +275,11 @@ section:nth-of-type(2) {
     background: #e9e9e9;
 }
 
-section:nth-of-type(2) .wrap-inner {
+section:nth-of-type(2) ul li {
     width: 200px;
 }
 
-section:nth-of-type(2) .wrap-inner:nth-child(2) {
+section:nth-of-type(2) ul li:nth-child(2) {
     width: 270px;
 }
 
@@ -224,11 +295,11 @@ section:nth-of-type(2) span {
     color: #808080;
 }
 
-section:nth-of-type(3) .wrap-inner {
+section:nth-of-type(3) ul li {
     width: 350px;
 }
 
-section:nth-of-type(3) .wrap-inner a {
+section:nth-of-type(3) ul li a {
     font-size: 24px;
 }
 
@@ -250,6 +321,7 @@ section:nth-of-type(4) ul {
 section:nth-of-type(4) li {
     display: flex;
     width: 500px;
+    text-align: left;
 }
 
 /**********counter***********/
@@ -330,6 +402,22 @@ h1 {
     cursor: pointer;
     box-shadow: 7px 7px 12px 2px rgba(0, 0, 0, .1),
                 5px 5px 9px 0 rgba(0, 0, 0, .15);
+    transition: .4s;
+}
+
+.about button:hover {
+    background: #43a1df;
+    box-shadow: inset -7px -7px 12px 2px rgba(0, 0, 0, .1),
+                inset -5px -5px 9px 0 rgba(0, 0, 0, .2),
+                7px 7px 12px 2px rgba(0, 0, 0, .1),
+                5px 5px 9px 0 rgba(0, 0, 0, .15);
+}
+
+.about button:active {
+    background: #0096dc;
+    box-shadow: inset 0 0 12px 5px rgba(0, 0, 0, .1),
+                inset 0 0 9px 0 rgba(0, 0, 0, .2);
+    transform: translateY(2px);
 }
 
 /***************footer**************/
@@ -351,6 +439,11 @@ footer address {
 address a {
     text-decoration: none;
     color: #3f3e3e;
+    transition: .4s;
+}
+
+address a:hover {
+    color: #0096dc;
 }
 
 address a:last-child {
@@ -363,4 +456,9 @@ address a:last-child {
     right: 30px;
     opacity: .7;
     cursor: pointer;
+    transition: .4s;
+}
+
+.up:hover {
+    opacity: 1;
 }
