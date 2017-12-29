@@ -248,6 +248,11 @@ section ul {
 
 section ul li {
     width: 170px;
+    transition: .4s;
+}
+
+section ul li:active {
+    transform: translateY(2px);
 }
 
 section {
