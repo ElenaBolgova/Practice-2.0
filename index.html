@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Транспортная компания «ФТС» - услуги в сфере международной логистики и внешнеторговой кооперации (ВЭД)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Транспортная компания "ФТС" - Главная</title>
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/balloon.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
 </head>
 <body>
 
@@ -14,7 +17,8 @@
     <header role="banner">
 
         <nav>
-            <ul class="wrapper-inner">
+            <div class="wrapper-inner">
+            <ul class="menu-left">
                 <li>
                     <a href="#">О КОМПАНИИ</a></li>
                 <li>
@@ -25,6 +29,9 @@
                     <a href="#">КОНТАКТЫ</a></li>
                 <li>
                     <a href="#">БАНКОВСКИЕ РЕКВИЗИТЫ</a></li>
+            </ul>
+
+            <ul class="menu-right">
                 <li class="wrapper-dropdown"> <!--Выпадающий список-->
                     <span class="js-dropdown">НАЖМИ МЕНЯ</span>
                     <ul>
@@ -34,10 +41,10 @@
                         <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 4</a></li>
                         <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 5</a></li>
                         <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 6</a></li>
-                    </ul></li>
-                <li>
-                    <a class="language" href="#"><img src="images/english.png">English version</a></li>
+                    </ul>
+                <li><a class="language" href="#"><img src="images/english.png">English version</a></li>
             </ul>
+            </div>
         </nav>
 
         <div class="slider">
@@ -112,23 +119,23 @@
         <h2>О КОМПАНИИ В ЦИФРАХ</h2>
         <ul class="wrapper-inner">
             <li>
-                <div class="amount spincrement">15</div>
+                <div class="amount-item spincrement">15</div>
                 <span>лет опыта в международной логистике и ВЭД</span>
             </li>
             <li>
-                <div class="amount spincrement">194</div>
+                <div class="amount-item spincrement">194</div>
                 <span>страны - география экспортных и импортных направлений работы</span>
             </li>
             <li>
-                <div class="amount spincrement">900</div>
+                <div class="amount-item spincrement">900</div>
                 <span>доставленных экспортных и импортных грузов</span>
             </li>
             <li>
-                <div class="amount spincrement">450</div>
+                <div class="amount-item spincrement">450</div>
                 <span>заключегнных внешнеторговых контрактов</span>
             </li>
             <li>
-                <div class="amount spincrement">3</div>
+                <div class="amount-item spincrement">3</div>
                 <span>вида транспорта доступно для перевозки груов</span>
             </li>
         </ul>
@@ -137,19 +144,19 @@
     <section class="wrapper">
         <h2>ТРАНСПОРТ ДЛЯ ПЕРЕВОЗКИ ВАШИХ ГРУЗОВ</h2>
         <ul class="wrapper-inner">
-            <li>
+            <li data-balloon="Жми и полетели!" data-balloon-pos="up">
                 <a href="#">
                     <img src="images/icon-air.png" alt="air">
                     <span>Авиаперевозки</span>
                 </a>
             </li>
-            <li>
+            <li data-balloon="Жми и поплыли!" data-balloon-pos="up">
                 <a href="#">
                     <img src="images/icon-sea.png" alt="sea">
                     <span>Водный транспорт</span>
                 </a>
             </li>
-            <li>
+            <li data-balloon="Жми и поехали!" data-balloon-pos="up">
                 <a href="#">
                     <img src="images/icon-auto.png" alt="auto">
                     <span>Автоперевозки</span>
@@ -184,7 +191,38 @@
             <li>международные авиаперевозки из Домодедово (DME), Шереметьево (SVO), Внуково (VKO) в Европу, США, Канаду, Китай, Японию, Южную Корею, Индию, страны СНГ, любую другую страну грузов любой сложности;</li>
             <li>международные авиаперевозки грузов в РФ (Россию) из любого международного аэропорта Европы, США, Канады, Китая, Японии, Южной Кореи, Индии, любой другой страны, в том числе в GOJ (МАНН) - Международный аэропорт «Стригино» (Нижний Новгород), Домодедово (DME), Шереметьево (SVO), Внуково (VKO), в любой другой аэропорт РФ (России) на условиях Ex-works</li>
         </ul>
-        <button>ЗАКАЗАТЬ УСЛУГИ</button> <!--MODAL???-->
+        <button class="get-modal">ЗАКАЗАТЬ УСЛУГИ</button> <!--MODAL-->
+    </div>
+
+    <div class="modal">
+        <div class="modal-inner">
+        <div class="close-modal">&#10006;</div>
+            <form action="#" class="form">
+                <label><input type="text" placeholder="Введите ваше имя" name="name" id="name-area" required>
+                </label>
+                <label><input type="email" placeholder="Введите ваш e-mail" name="email" id="email-area" required>
+                </label>
+                <div class="custom-select">
+                    <div class="current-value">Выберите страну</div>
+                    <ul>
+                        <li>Россия</li>
+                        <li>Украина</li>
+                        <li>USA</li>
+                    </ul>
+                    <input type="text">
+                </div>
+                <div class="custom-select">
+                    <div class="current-value">Выберите город</div>
+                    <ul>
+                        <li>Харьков</li>
+                        <li>Киев</li>
+                        <li>Днепр</li>
+                    </ul>
+                    <input type="text">
+                </div>
+                <input type="submit" id="submit" value="Отправить">
+            </form>
+        </div>
     </div>
 
     <footer class="wrapper" role="contentinfo">
@@ -205,6 +243,7 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/custom-scripts.js"></script>
+<script src="js/jquery.spincrement.min.js"></script>
 
 </body>
 </html>

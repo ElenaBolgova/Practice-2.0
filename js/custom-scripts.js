@@ -1,6 +1,7 @@
 $(window).ready(function() {
 
     ///// Плавная загрузка страницы /////
+
     setTimeout(function () {
         $('.wrapper').animate({opacity: 1}, 300);
     }, 300);
@@ -14,35 +15,8 @@ $(window).ready(function() {
         infinite: false
     });
 
-    ////// выпадающий список ///////
-
-    // При нажатии на элементы выпавшего списка осуществляется переход по ссылкам
-
-    $('.js-dropdown').on('click', function () {
-
-        var status = 0; //default opacity: 0;
-
-        if (status == 0) {
-            $('.wrapper-dropdown ul').css({'opacity': '1'});
-            status = 1;
-        } else {
-            $('.wrapper-dropdown ul').css({'opacity': '0'});
-            status = 0;
-        }
-
-        event.stopPropagation(); // Если событие уже произошло, то прекращает его повтор
-
-        $('body').on('click', function () {
-            $('.wrapper-dropdown ul').css({'opacity': '0'}); // Закрываем выпавший список, если кликнули в любое место body
-        });
-
-        $('body').on('click', 'a', function () {
-            window.location.href = $(this).attr('href'); // Открываем соответствующую ссылку при нажатии на элемент выпавшего списка
-        });
-
-    });
-
     /*----------- Плавный скролл для якоря ----------------*/
+
     $("nav").on("click", "a", function (event) {
         event.preventDefault();
         var id = $(this).attr('href'),
@@ -51,12 +25,13 @@ $(window).ready(function() {
     });
 
     /*--------------- Плавный скролл наверх ----------------*/
+
     $(".up").on("click", function () {
         $('body,html').animate({scrollTop: 0}, 500);
     });
 
-    // не работает
-    // /*---------------- Прокрутка цифр ----------------*/
+
+    /*---------------- Прокрутка цифр ----------------*/
 
     var show = true;
     var countbox = ".numbers";
@@ -68,13 +43,62 @@ $(window).ready(function() {
         var d_height = $(document).height(); // Высота всего документа
         var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
         if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-            $('.amount').spincrement({
+            $('.amount-item').spincrement({
                 thousandSeparator: "",
                 duration: 3000
             });
 
             show = false;
         }
-    })
+    });
 
+    ///// DROPDOWN LIST /////
+
+    $('.js-dropdown').click(function() {
+        $('.wrapper-dropdown ul').fadeToggle(400);
+    });
+
+    $('.wrapper-dropdown ul li').click(function() {
+        var city = $(this).text();
+        $(this).parent().siblings('.js-dropdown').text(city);
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        $(this).parent().siblings('input').val(city);
+        $(this).parents('.wrapper-dropdown').find(' ul').fadeOut(400);
+    });
+
+});
+
+///// MODAL /////
+
+$('.get-modal').click(function() {
+    $('.modal').fadeIn(400).css('display', 'flex');
+});
+
+$('.modal').click(function(event) {
+    var clickedElement = event.target;
+    if(!$(clickedElement).closest('.modal-inner').length) {
+        $('.modal').fadeOut(400);
+    }
+    if($(clickedElement).hasClass('close-modal')) {
+        $('.modal').fadeOut(400);
+    }
+});
+
+$('.current-value').click(function() {
+    if($(this).parent().hasClass('active')) {
+        $(this).parent().removeClass('active');
+    } else {
+        $('.custom-select.active').removeClass('active');
+        $(this).parent().addClass('active');
+    }
+});
+
+$('.custom-select ul li').click(function() {
+    var current = $(this).text();
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    $(this).parent().siblings('.current-value').text(current);
+    $(this).parent().siblings('input').val(current);
+    $(this).parents('.custom-select').removeClass('active');
 });
