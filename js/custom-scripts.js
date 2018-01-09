@@ -67,7 +67,7 @@ $(window).ready(function() {
         $(this).parents('.wrapper-dropdown').find(' ul').fadeOut(400);
     });
 
-});
+
 
 ///// MODAL /////
 
@@ -101,4 +101,11 @@ $('.custom-select ul li').click(function() {
     $(this).parent().siblings('.current-value').text(current);
     $(this).parent().siblings('input').val(current);
     $(this).parents('.custom-select').removeClass('active');
+});
+
+$('.burger').click(function() {
+    $(this).toggleClass('fa-close fa-bars');
+    $('.menu-left').toggleClass('active');
+});
+
 });

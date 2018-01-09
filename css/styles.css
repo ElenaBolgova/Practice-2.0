@@ -9,12 +9,15 @@
     position: relative;
     display: block;
     width: 100%;
+    min-width: 320px;
+    overflow: hidden;
     margin: auto;
     opacity: 0;
 }
 
 .wrapper-inner {
-    width: 1190px;
+    max-width: 1190px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -27,9 +30,6 @@ ul {
 nav {
     background: #415e89;
     padding: 15px 0;
-}
-
-nav .wrapper-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,7 +84,87 @@ a.language:hover {
     color: #cbcbcb;
 }
 
-/********** dropdown list ************/
+/************** BURGER **************/
+
+.burger {
+    display: none;
+}
+
+
+@media (max-width: 1190px) {
+    header {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 101;
+    }
+
+    .wrapper {
+        padding-top: 66px; /*отступ для меню*/
+    }
+
+    .burger {
+        display: block;
+        color: #fff;
+        font-size: 24px;
+    }
+    .menu-left {
+        display: block;
+        position: fixed;
+        width: 100%;
+        padding: 25px 0 0;
+        z-index: 101;
+        background: #336699;
+        left: 0;
+        bottom: -150%;
+        height: calc(100vh - 97px);
+        transition: .6s;
+    }
+
+    .menu-left li {
+        display: block;
+        padding: 5px 15px;
+        text-align: center;
+    }
+
+        .menu-left.active {
+            bottom: 0;
+        }
+}
+
+.slider .slide {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+@media (max-width: 640px) {
+    .details {
+        width: calc(100% - 30px);
+        height: auto;
+        left: 15px;
+        right: 15px;
+        text-align: center;
+    }
+
+    section ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px;
+    }
+
+    .details span {
+        font-size: 32px!important;
+    }
+
+    .details a {
+        font-size: 24px!important;
+    }
+
+}
+
+/********** DROPDOWN LIST ************/
 
 .js-dropdown {
     cursor: pointer;
