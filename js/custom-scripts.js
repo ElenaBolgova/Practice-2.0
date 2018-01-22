@@ -1,12 +1,12 @@
 $(window).ready(function() {
 
-    ///// Плавная загрузка страницы /////
+    ///// SMOOTH PAGE LOADING /////
 
     setTimeout(function () {
         $('.wrapper').animate({opacity: 1}, 300);
     }, 300);
 
-    ///// Слайдер /////
+    ///// SLIDER /////
 
     $('.slider').slick({
         slidesToShow: 1,
@@ -15,41 +15,20 @@ $(window).ready(function() {
         infinite: false
     });
 
-    /*----------- Плавный скролл для якоря ----------------*/
+    ///// BURGER /////
+
+    $('.burger').click(function() {
+        $(this).toggleClass('fa-close fa-bars');
+        $('.menu-left').toggleClass('active');
+    });
+
+    ///// SMOOTH SCROLL TO ANCHOR /////
 
     $("nav").on("click", "a", function (event) {
         event.preventDefault();
         var id = $(this).attr('href'),
             top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 500);
-    });
-
-    /*--------------- Плавный скролл наверх ----------------*/
-
-    $(".up").on("click", function () {
-        $('body,html').animate({scrollTop: 0}, 500);
-    });
-
-
-    /*---------------- Прокрутка цифр ----------------*/
-
-    var show = true;
-    var countbox = ".numbers";
-    $(window).on("scroll load resize", function () {
-        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
-        var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
-        var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
-        var w_height = $(window).height(); // Высота окна браузера
-        var d_height = $(document).height(); // Высота всего документа
-        var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-            $('.amount-item').spincrement({
-                thousandSeparator: "",
-                duration: 3000
-            });
-
-            show = false;
-        }
+        $('body,html').animate({scrollTop: top}, 700);
     });
 
     ///// DROPDOWN LIST /////
@@ -64,48 +43,70 @@ $(window).ready(function() {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
         $(this).parent().siblings('input').val(city);
-        $(this).parents('.wrapper-dropdown').find(' ul').fadeOut(400);
+        $(this).parents('.wrapper-dropdown').find('ul').fadeOut(400);
     });
 
+    ///// NUMBERS SCROLLING /////
 
+    var show = true;
+    var countbox = ".numbers";
+    $(window).on("scroll load resize", function () {
+        if (!show) return false;
+        var w_top = $(window).scrollTop();
+        var e_top = $(countbox).offset().top;
+        var w_height = $(window).height();
+        var d_height = $(document).height();
+        var e_height = $(countbox).outerHeight();
+        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+            $('.amount-item').spincrement({
+                thousandSeparator: "",
+                duration: 3000
+            });
 
-///// MODAL /////
+            show = false;
+        }
+    });
 
-$('.get-modal').click(function() {
-    $('.modal').fadeIn(400).css('display', 'flex');
-});
+    ///// MODAL WINDOW /////
 
-$('.modal').click(function(event) {
-    var clickedElement = event.target;
-    if(!$(clickedElement).closest('.modal-inner').length) {
-        $('.modal').fadeOut(400);
-    }
-    if($(clickedElement).hasClass('close-modal')) {
-        $('.modal').fadeOut(400);
-    }
-});
+    $('.get-modal').click(function() {
+        $('.modal').fadeIn(400).css('display', 'flex');
+    });
 
-$('.current-value').click(function() {
-    if($(this).parent().hasClass('active')) {
-        $(this).parent().removeClass('active');
-    } else {
-        $('.custom-select.active').removeClass('active');
-        $(this).parent().addClass('active');
-    }
-});
+    $('.modal').click(function(event) {
+        var clickedElement = event.target;
+        if(!$(clickedElement).closest('.modal-inner').length) {
+            $('.modal').fadeOut(400);
+        }
+        if($(clickedElement).hasClass('close-modal')) {
+            $('.modal').fadeOut(400);
+        }
+    });
 
-$('.custom-select ul li').click(function() {
-    var current = $(this).text();
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
-    $(this).parent().siblings('.current-value').text(current);
-    $(this).parent().siblings('input').val(current);
-    $(this).parents('.custom-select').removeClass('active');
-});
+    ///// CUSTOM SELECT FOR MODAL WINDOW /////
 
-$('.burger').click(function() {
-    $(this).toggleClass('fa-close fa-bars');
-    $('.menu-left').toggleClass('active');
-});
+    $('.current-value').click(function() {
+        if($(this).parent().hasClass('active')) {
+            $(this).parent().removeClass('active');
+        } else {
+            $('.custom-select.active').removeClass('active');
+            $(this).parent().addClass('active');
+        }
+    });
+
+    $('.custom-select ul li').click(function() {
+        var current = $(this).text();
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        $(this).parent().siblings('.current-value').text(current);
+        $(this).parent().siblings('input').val(current);
+        $(this).parents('.custom-select').removeClass('active');
+    });
+
+    ///// SMOOTH SCROLL TO TOP /////
+
+    $(".up").on("click", function () {
+        $('body,html').animate({scrollTop: 0}, 500);
+    });
 
 });

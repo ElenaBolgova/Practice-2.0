@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Транспортная компания «ФТС» - услуги в сфере международной логистики и внешнеторговой кооперации (ВЭД)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--запрет масштабирования на разных устройствах-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Транспортная компания "ФТС" - Главная</title>
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/balloon.css">
@@ -16,65 +16,64 @@
 
     <header role="banner">
 
-        <nav>
-            <i class="fa fa-bars burger"></i>
+        <nav class="wrapper-inner">
 
+            <i class="fa fa-bars burger"></i>
             <ul class="menu-left">
-                <li>
-                    <a href="#">О КОМПАНИИ</a></li>
-                <li>
-                    <a href="#">УСЛУГИ</a></li>
-                <li>
-                    <a href="#">НОВОСТИ</a></li>
-                <li>
-                    <a href="#">КОНТАКТЫ</a></li>
-                <li>
-                    <a href="#">БАНКОВСКИЕ РЕКВИЗИТЫ</a></li>
+                <li><a href="#about">О КОМПАНИИ</a></li>
+                <li><a href="#services">УСЛУГИ</a></li>
+                <li><a href="#">НОВОСТИ</a></li>
+                <li><a href="#contacts">КОНТАКТЫ</a></li>
+                <li><a href="#">БАНКОВСКИЕ РЕКВИЗИТЫ</a></li>
             </ul>
 
             <ul class="menu-right">
-                <li class="wrapper-dropdown"> <!--Выпадающий список-->
-                    <span class="js-dropdown">НАЖМИ МЕНЯ</span>
+                <li class="wrapper-dropdown">
+                    <span class="js-dropdown">ВАШ ГОРОД</span>
                     <ul>
-                        <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 1</a></li>
-                        <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 2</a></li>
-                        <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 3</a></li>
-                        <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 4</a></li>
-                        <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 5</a></li>
-                        <li><a href="#">ЕЩЕ КАКОЕ-ТО ЗНАЧЕНИЕ 6</a></li>
+                        <li><a href="#">КИЕВ</a></li>
+                        <li><a href="#">ХАРЬКОВ</a></li>
+                        <li><a href="#">ДНЕПР</a></li>
+                        <li><a href="#">ЗАПОРОЖЬЕ</a></li>
+                        <li><a href="#">ОДЕССА</a></li>
+                        <li><a href="#">ЛЬВОВ</a></li>
                     </ul>
-                <li><a class="language" href="#"><img src="images/english.png">English version</a></li>
+                <li><a class="language" href="#"><img src="images/english.png">
+                English version</a></li>
             </ul>
 
         </nav>
 
-        <div class="slider">
-                <div class="slide">
-                    <img src="images/slide1.png" alt="title slide1">
-                    <div class="details">
-                        <span>Доставка грузов от двери до двери</span><br>
-                        <a href="#">Подробнее</a>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/slide2.png" alt="title slide2">
-                    <div class="details">
-                        <span>Доставка грузов от двери до двери</span>
-                        <a href="#">Подробнее</a>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="images/slide3.png" alt="title slide3">
-                    <div class="details">
-                        <span>Доставка грузов от двери до двери</span>
-                        <a href="#">Подробнее</a>
-                    </div>
-                </div>
-        </div> <!--достать из хэдэра-->
-
     </header>
 
-    <section class="wrapper-inner">
+    <div class="slider">
+
+        <div class="slide">
+            <img src="images/slide1.png" alt="title slide1">
+            <div class="details">
+                <span>Доставка грузов от двери до двери</span><br>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/slide2.png" alt="title slide2">
+            <div class="details">
+                <span>Доставка грузов от двери до двери</span>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/slide3.png" alt="title slide3">
+            <div class="details">
+                <span>Доставка грузов от двери до двери</span>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="wrapper-inner" id="services">
+
         <h2>НАШИ УСЛУГИ</h2>
         <ul>
             <li>
@@ -114,9 +113,11 @@
                 </a>
             </li>
         </ul>
+
     </section>
 
-    <section class="wrapper numbers">
+    <section class="numbers">
+
         <h2>О КОМПАНИИ В ЦИФРАХ</h2>
         <ul class="wrapper-inner">
             <li>
@@ -140,51 +141,49 @@
                 <span>вида транспорта доступно для перевозки груов</span>
             </li>
         </ul>
+
     </section>
 
-    <section class="wrapper">
+    <section class="transport">
+
         <h2>ТРАНСПОРТ ДЛЯ ПЕРЕВОЗКИ ВАШИХ ГРУЗОВ</h2>
         <ul class="wrapper-inner">
-            <li data-balloon="Жми и полетели!" data-balloon-pos="up">
+            <li data-balloon-length="medium" data-balloon="Осуществляем межрегиональные и международные авиаперевозки грузов ведущими авиакомпаниями" data-balloon-pos="up">
                 <a href="#">
                     <img src="images/icon-air.png" alt="air">
                     <span>Авиаперевозки</span>
                 </a>
             </li>
-            <li data-balloon="Жми и поплыли!" data-balloon-pos="up">
+            <li data-balloon-length="medium" data-balloon="Осуществляем международные морские грузоперевозки из любой страны мира" data-balloon-pos="up">
                 <a href="#">
                     <img src="images/icon-sea.png" alt="sea">
                     <span>Водный транспорт</span>
                 </a>
             </li>
-            <li data-balloon="Жми и поехали!" data-balloon-pos="up">
+            <li data-balloon-length="medium" data-balloon="Осуществляем межрегиональные и международные автоперевозки грузов в т.ч. от двери до двери" data-balloon-pos="up">
                 <a href="#">
                     <img src="images/icon-auto.png" alt="auto">
                     <span>Автоперевозки</span>
                 </a>
             </li>
         </ul>
+
     </section>
 
-    <section class="wrapper">
+    <section class="advantages">
+
         <h2>НАШИ ПРЕИМУЩЕСТВА</h2>
         <ul class="wrapper-inner">
-            <li>
-                Минимальные сроки доставки грузов в РФ, из РФ, за пределами РФ
-            </li>
-            <li>
-                Комплексный подход к грузопере- возкам в РФ, из РФ, за пределами РФ при экспорте и импорте това- ров, производство картонной упа- ковки
-            </li>
-            <li>
-                Внешнеторговый аутсорсинг ВЭД полного цикла в РФ, за пределами РФ и консультирование по любым вопросам ВЭД при экспорте и импорте товаров
-            </li>
-            <li>
-                Страхование грузов от всех рисков порчи и потери со 100% гарантией юридической защиты при экспорте и импорте товаров, помощь в уре- гулировании убытков со страховой компанией
-            </li>
+            <li>Минимальные сроки доставки грузов в РФ, из РФ, за пределами РФ</li>
+            <li>Комплексный подход к грузопере- возкам в РФ, из РФ, за пределами РФ при экспорте и импорте това- ров, производство картонной упа- ковки</li>
+            <li>Внешнеторговый аутсорсинг ВЭД полного цикла в РФ, за пределами РФ и консультирование по любым вопросам ВЭД при экспорте и импорте товаров</li>
+            <li>Страхование грузов от всех рисков порчи и потери со 100% гарантией юридической защиты при экспорте и импорте товаров, помощь в уре- гулировании убытков со страховой компанией</li>
         </ul>
+
     </section>
 
-    <div class="about wrapper-inner">
+    <section class="about wrapper-inner" id="about">
+
         <h1>Транспортная компания «ФТС» - услуги в сфере международной логистики и внешнеторговой кооперации (ВЭД)</h1>
         <span>Общество с ограниченной ответственностью Транспортная компания «ФрахтТрейдингСервис» (ООО ТК «ФТС»)  оказывает следующие виды услуг:</span>
         <ul>
@@ -192,45 +191,51 @@
             <li>международные авиаперевозки из Домодедово (DME), Шереметьево (SVO), Внуково (VKO) в Европу, США, Канаду, Китай, Японию, Южную Корею, Индию, страны СНГ, любую другую страну грузов любой сложности;</li>
             <li>международные авиаперевозки грузов в РФ (Россию) из любого международного аэропорта Европы, США, Канады, Китая, Японии, Южной Кореи, Индии, любой другой страны, в том числе в GOJ (МАНН) - Международный аэропорт «Стригино» (Нижний Новгород), Домодедово (DME), Шереметьево (SVO), Внуково (VKO), в любой другой аэропорт РФ (России) на условиях Ex-works</li>
         </ul>
-        <button class="get-modal">ЗАКАЗАТЬ УСЛУГИ</button> <!--MODAL-->
-    </div>
 
-    <div class="modal">
-        <div class="modal-inner">
-        <div class="close-modal">&#10006;</div>
-            <form action="#" class="form">
-                <label><input type="text" placeholder="Введите ваше имя" name="name" id="name-area" required>
-                </label>
-                <label><input type="email" placeholder="Введите ваш e-mail" name="email" id="email-area" required>
-                </label>
-                <div class="custom-select">
-                    <div class="current-value">Выберите страну</div>
-                    <ul>
-                        <li>Россия</li>
-                        <li>Украина</li>
-                        <li>USA</li>
-                    </ul>
-                    <input type="text">
-                </div>
-                <div class="custom-select">
-                    <div class="current-value">Выберите город</div>
-                    <ul>
-                        <li>Харьков</li>
-                        <li>Киев</li>
-                        <li>Днепр</li>
-                    </ul>
-                    <input type="text">
-                </div>
-                <input type="submit" id="submit" value="Отправить">
-            </form>
+        <button class="get-modal">ЗАКАЗАТЬ УСЛУГИ</button>
+        <div class="modal">
+            <div class="modal-inner">
+                <form action="#" class="modal-form">
+                    <label>
+                        <input type="text" placeholder="Введите ваше имя" name="name" id="name-area" required>
+                    </label>
+                    <label>
+                        <input type="email" placeholder="Введите ваш e-mail" name="email" id="email-area" required>
+                    </label>
+                    <div class="custom-select">
+                        <div class="current-value">Выберите страну</div>
+                        <ul>
+                            <li>Россия</li>
+                            <li>Украина</li>
+                            <li>USA</li>
+                        </ul>
+                        <input type="text">
+                    </div>
+                    <div class="custom-select">
+                        <div class="current-value">Выберите город</div>
+                        <ul>
+                            <li>Харьков</li>
+                            <li>Киев</li>
+                            <li>Днепр</li>
+                        </ul>
+                        <input type="text">
+                    </div>
+                    <input type="submit" id="submit" value="Отправить">
+                </form>
+                <div class="close-modal">&#10006;</div>
+            </div>
         </div>
-    </div>
 
-    <footer class="wrapper" role="contentinfo">
+    </section>
 
-        <div class="footer wrapper-inner">
-            <span class="copyright">2016 ©  Транспортная компания "ФТС" - услуги в сфере международной логистики и анешнеторговой кооперации (ВЭД).</span>
-            <address>Россия, 6031555, Нижний Новгород, ул.Ульянова, 46, офис 2225. Телефон: <a href="tel:+78312020385">+7 (831) 202-03-85</a>. E-mail: <a href="mailto:fts.rad@co.ru">fts.rad@co.ru</a></address>
+    <footer role="contentinfo">
+
+        <div class="footer wrapper-inner" id="contacts">
+            <span class="copyright">2016 ©  Транспортная компания "ФТС" - услуги в сфере международной логистики и внешнеторговой кооперации (ВЭД).</span>
+            <address>Россия, 6031555, Нижний Новгород, ул.Ульянова, 46, офис 2225.
+                Телефон: <a href="tel:+78312020385">+7 (831) 202-03-85.</a>
+                E-mail: <a href="mailto:fts.rad@co.ru">fts.rad@co.ru</a>
+            </address>
         </div>
 
         <div class="up">
