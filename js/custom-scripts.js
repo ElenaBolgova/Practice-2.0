@@ -22,6 +22,10 @@ $(window).ready(function() {
         $('.menu-left').toggleClass('active');
     });
 
+    while($('.menu-left').hasClass('active')) {
+        $('.wrapper').css('height', '100%');
+    }
+
     ///// SMOOTH SCROLL TO ANCHOR /////
 
     $("nav").on("click", "a", function (event) {

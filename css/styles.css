@@ -742,8 +742,8 @@ address a:last-child {
         padding: 25px 0 0;
         z-index: 101;
         background: #336699;
-        left: 0;
-        bottom: -150%;
+        top: 50px;
+        left: -150%;
         height: calc(100vh - 50px);
         transition: .6s;
     }
@@ -755,7 +755,7 @@ address a:last-child {
     }
 
     .menu-left.active {
-        bottom: 0;
+        left: 0;
     }
 
     .slide img {
